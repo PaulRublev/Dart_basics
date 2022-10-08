@@ -1,8 +1,6 @@
 import 'package:dart_basics/convertation_system.dart';
 import 'package:dart_basics/delimeters_calculator.dart';
-
-export 'package:dart_basics/delimeters_calculator.dart';
-export 'package:dart_basics/convertation_system.dart';
+import 'package:dart_basics/search_num_in_string.dart' as search_num;
 
 void main(List<String> arguments) {
   // 1) Реализуйте методы вычисления НОД и НОК целых чисел.
@@ -25,4 +23,11 @@ void main(List<String> arguments) {
       'Результат преобразования числа $dec в двоичную систему: ${dec.decimalToBinary()}');
   print(
       'Результат преобразования числа $bin в десятичную систему: ${bin.binaryToDecimal()}');
+
+  // 3) Реализуйте метод, который принимает строку слов, разделённых пробелами.
+  //    Задача — найти в данной строке числа и вернуть коллекцию num этих чисел.
+  print('3 задание');
+  String text = '1i1 3323 4.4 4,5 5,,5 6,6.6 7.7,7 8,i 9.0 .1';
+  print(
+      'Найденные числа в строке $text: ${search_num.searchNumInString(text)}');
 }
