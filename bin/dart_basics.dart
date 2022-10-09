@@ -2,6 +2,7 @@ import 'package:dart_basics/convertation_system.dart';
 import 'package:dart_basics/delimeters_calculator.dart';
 import 'package:dart_basics/search_num_in_string.dart' as search_num;
 import 'package:dart_basics/word_repeat_counter.dart' as repeat_counter;
+import 'package:dart_basics/search_digits.dart' as search_digits;
 
 void main(List<String> arguments) {
   // 1) Реализуйте методы вычисления НОД и НОК целых чисел.
@@ -37,4 +38,23 @@ void main(List<String> arguments) {
   var words = ['ab', 'bc', 'cd', 'bc', 'ef', 'bc', 'ab'];
   print('Подсчет слов в коллекции $words :');
   print(repeat_counter.wordRepeatCounter(words));
+  // 5) Есть коллекция строк вида ‘one, two, three, cat, dog’ или любого другого.
+  //    Реализуйте метод, возвращающий цифры без повторений, которые встречаются в данной строке.
+  //    Однако цифры встречаются в виде английских слов от zero до nine. Например,
+  //    в результате строки ‘one, two, zero, zero’ мы получим следующий результат: [1, 2, 0].
+  //    Если в строке есть слова, не являющиеся цифрами от 0 до 9, пропускайте их.
+  print('5 задание');
+  final wordsWithNumbers = [
+    'one',
+    'nine',
+    'two',
+    'three',
+    'cat',
+    'dog',
+    'one',
+    'nine',
+    'none'
+  ];
+  print('Поиск цифр в словах $wordsWithNumbers:');
+  print(search_digits.searchDigitsInWords(wordsWithNumbers));
 }
