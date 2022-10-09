@@ -1,6 +1,7 @@
 import 'package:dart_basics/convertation_system.dart';
 import 'package:dart_basics/delimeters_calculator.dart';
 import 'package:dart_basics/search_num_in_string.dart' as search_num;
+import 'package:dart_basics/word_repeat_counter.dart' as repeat_counter;
 
 void main(List<String> arguments) {
   // 1) Реализуйте методы вычисления НОД и НОК целых чисел.
@@ -30,4 +31,10 @@ void main(List<String> arguments) {
   String text = '1i1 3323 4.4 4,5 5,,5 6,6.6 7.7,7 8,i 9.0 .1';
   print(
       'Найденные числа в строке $text: ${search_num.searchNumInString(text)}');
+  // 4) Есть коллекция слов. Реализуйте метод, возвращающий Map.
+  //    Данный Map должен соотносить слово и количество его вхождений в данную коллекцию.
+  print('4 задание');
+  var words = ['ab', 'bc', 'cd', 'bc', 'ef', 'bc', 'ab'];
+  print('Подсчет слов в коллекции $words :');
+  print(repeat_counter.wordRepeatCounter(words));
 }
