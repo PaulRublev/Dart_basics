@@ -4,7 +4,8 @@ import 'package:dart_basics/search_num_in_string.dart' as search_num;
 import 'package:dart_basics/word_repeat_counter.dart' as repeat_counter;
 import 'package:dart_basics/search_digits.dart' as search_digits;
 import 'package:dart_basics/point.dart';
-import 'package:dart_basics/root_calculator.dart' as root;
+import 'package:dart_basics/root_calculator.dart';
+import 'package:dart_basics/user.dart';
 
 void main(List<String> arguments) {
   // 1) Реализуйте методы вычисления НОД и НОК целых чисел.
@@ -92,4 +93,24 @@ void main(List<String> arguments) {
   var n2 = 4;
   print(
       'Корень $n2 степени из числа $x2: ${x2.rootCalculator(n2, approximation)}');
+  // 8) Создайте класс User, у которого есть поле email. Реализуйте два наследника данного
+  //    класса AdminUser и GeneralUser. Реализуйте mixin над классом User, у которого будет
+  //    метод getMailSystem, который возвращает значение из email, которое находится после @.
+  //    Например, если email пользователя user@mail.ru, то данный метод вернёт mail.ru.
+  //    Используйте данный миксин на AdminUser. Далее реализуйте класс UserManager<T extends User>,
+  //    у которого будет храниться список пользователей и будут методы добавления или удаления их.
+  //    Также в UserManager реализуйте метод, который выведет почту всех пользователей,
+  //    однако если пользователь admin, будет выведено значение после @.
+  //    Проверьте реализованные методы на практике.
+  print('8 задание');
+  var manager = UserManager();
+  var user = User('abc@mail.bu');
+  var user2 = AdminUser('bak@email.ss');
+  var user3 = GeneralUser('ccc@ya.ma');
+  manager.addUser(user);
+  manager.addUser(user2);
+  manager.addUser(user3);
+  manager.removeUser(user);
+  print('Список почты пользователей:');
+  manager.printEmail();
 }
