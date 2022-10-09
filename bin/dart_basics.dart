@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:dart_basics/convertation_system.dart';
 import 'package:dart_basics/delimeters_calculator.dart';
 import 'package:dart_basics/search_num_in_string.dart' as search_num;
@@ -6,6 +8,7 @@ import 'package:dart_basics/search_digits.dart' as search_digits;
 import 'package:dart_basics/point.dart';
 import 'package:dart_basics/root_calculator.dart';
 import 'package:dart_basics/user.dart';
+import 'package:dart_basics/integral.dart';
 
 void main(List<String> arguments) {
   // 1) Реализуйте методы вычисления НОД и НОК целых чисел.
@@ -113,4 +116,19 @@ void main(List<String> arguments) {
   manager.removeUser(user);
   print('Список почты пользователей:');
   manager.printEmail();
+  // 9) Реализуйте метод, который вычисляет значение определённого интеграла Римана
+  //    в заданных значениях и с заданной точностью разбиения. По возможности учтите
+  //    случаи, когда функция имеет точки разрыва. Реализованный метод должен
+  //    принимать функцию, точки x1 и x2, точность разбиения.
+  print('9 задание');
+  double f(double x) {
+    return 2 * pow(x, 3) - 7 * x + 4;
+  }
+
+  double a = 1;
+  double b = 3;
+  int eps = 500;
+  print(
+      'Интеграл от функции {2*pow(x,3)-7*x+4} на отрезке [$a,$b] с точностью разбиения $eps равен:');
+  print(calculateIntegral(f, a, b, eps));
 }
