@@ -4,6 +4,7 @@ import 'package:dart_basics/search_num_in_string.dart' as search_num;
 import 'package:dart_basics/word_repeat_counter.dart' as repeat_counter;
 import 'package:dart_basics/search_digits.dart' as search_digits;
 import 'package:dart_basics/point.dart';
+import 'package:dart_basics/root_calculator.dart' as root;
 
 void main(List<String> arguments) {
   // 1) Реализуйте методы вычисления НОД и НОК целых чисел.
@@ -76,4 +77,19 @@ void main(List<String> arguments) {
   print('Начало координат $a0, единичный вектор $a3');
   print(
       'Площадь треугольника, который образуют точки $a1, $a2, $a3: ${triangleArea(a1, a2, a3)}');
+  // 7) Реализуйте метод, который вычисляет корень любой заданной степени из числа.
+  //    Реализуйте данный метод как extension-метод для num. Алгоритм можете взять на
+  //    википедии как «Алгоритм нахождения корня n-й степени». Запрещается использовать
+  //    методы math. В случае когда значение вернуть невозможно,
+  //    необходимо бросать исключение с описанием ошибки.
+  print('7 задание');
+  var approximation = 0.001;
+  var x1 = -8;
+  var n1 = 3;
+  print(
+      'Корень $n1 степени из числа $x1: ${x1.rootCalculator(n1, approximation)}');
+  var x2 = 111;
+  var n2 = 4;
+  print(
+      'Корень $n2 степени из числа $x2: ${x2.rootCalculator(n2, approximation)}');
 }
