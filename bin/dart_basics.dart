@@ -3,6 +3,7 @@ import 'package:dart_basics/delimeters_calculator.dart';
 import 'package:dart_basics/search_num_in_string.dart' as search_num;
 import 'package:dart_basics/word_repeat_counter.dart' as repeat_counter;
 import 'package:dart_basics/search_digits.dart' as search_digits;
+import 'package:dart_basics/point.dart';
 
 void main(List<String> arguments) {
   // 1) Реализуйте методы вычисления НОД и НОК целых чисел.
@@ -57,4 +58,22 @@ void main(List<String> arguments) {
   ];
   print('Поиск цифр в словах $wordsWithNumbers:');
   print(search_digits.searchDigitsInWords(wordsWithNumbers));
+  // 6) Реализуйте класс Point, который описывает точку в трёхмерном пространстве.
+  //    У данного класса реализуйте метод distanceTo(Point another), который возвращает
+  //    расстояние от данной точки до точки в параметре. По желанию можете реализовать метод,
+  //    принимающий три точки в трёхмерном пространстве и возвращающий площадь треугольника,
+  //    который образуют данные точки. Реализуйте factory-конструкторы для данного класса,
+  //    возвращающие начало координат, и ещё несколько на своё усмотрение (например, конструктор,
+  //    возвращающий точку с координатами [1,1,1], которая определяет единичный вектор).
+  print('6 задание');
+  Point a1 = Point(2, 3, 4);
+  Point a2 = Point(4, 3, 2);
+  Point a3 = Point.unitVector();
+  Point a0 = Point.zero();
+  print(
+      'Расстояние между двумя точками с координатами $a0 и $a3: ${a3.distanceTo(a0)}');
+  print('Примеры векторов заданных factory-конструктором:');
+  print('Начало координат $a0, единичный вектор $a3');
+  print(
+      'Площадь треугольника, который образуют точки $a1, $a2, $a3: ${triangleArea(a1, a2, a3)}');
 }
